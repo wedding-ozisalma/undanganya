@@ -1,145 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-  font-family: 'Montserrat', Arial, sans-serif;
-  color: #333;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.invitation-container {
-  background: rgba(255,255,255,0.95);
-  max-width: 560px;
-  margin: 2rem;
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(143, 100, 243, 0.15);
-  overflow: hidden;
-  padding: 36px 28px;
+body, html {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 
-header h1 {
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  font-size: 2.7em;
-  margin-bottom: 0;
-  letter-spacing: 2px;
-  color: #66429a;
-}
-
-.quote {
-  text-align: center;
-  font-style: italic;
-  color: #9073c0;
-  margin-top: 0.2em;
-  margin-bottom: 1.9em;
-}
-
-.bride-groom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 2.5em;
-}
-
-.photo {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  border: 3px solid #9e65e6;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.bride {
-  background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?dpr=2&w=200&q=80');
-}
-
-.groom {
-  background-image: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?dpr=2&w=200&q=80');
-}
-
-.names {
-  flex: 1;
-  text-align: center;
-}
-
-.names h2 {
-  font-family: 'Playfair Display', serif;
-  margin: 0 0 2px;
-  font-size: 1.6em;
-  color: #463a37;
-}
-
-.details {
-  display: flex;
-  justify-content: space-between;
-  margin: 2em 0 1.3em;
-  flex-wrap: wrap;
-  gap: 15px 0;
-}
-
-.detail-item {
-  flex: 1;
-  text-align: center;
-}
-
-.detail-item h3 {
-  margin-bottom: 7px;
-  color: #8d67c7;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.05em;
-}
-
-.countdown {
-  background: #f2e6fa;
-  padding: 18px 0 10px;
-  border-radius: 16px;
-  text-align: center;
-  margin-bottom: 1.7em;
-  box-shadow: 0 2px 8px rgba(158, 101, 230, 0.09);
-}
-
-#countdown-timer {
-  font-size: 1.32em;
-  color: #523874;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-top: 0.4em;
-}
-
-footer {
-  margin-top: 1.5em;
-  text-align: center;
-  font-size: 0.97em;
-}
-
-.names-small {
-  font-family: 'Playfair Display', serif;
-  margin-top: 0.7em;
-  color: #946eb0;
-  font-size: 1.15em;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 600px) {
-  .invitation-container {
-    max-width: 98vw;
-    padding: 26px 7px;
-  }
-  .bride-groom {
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* Ganti URL di bawah dengan link foto bunga/prewedding Anda */
+    background: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80') no-repeat center center/cover;
+    display: flex;
     flex-direction: column;
-    gap: 10px;
-  }
-  .details {
-    flex-direction: column;
-    gap: 6px 0;
-  }
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Efek gelap transparan agar teks terbaca */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 10;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.btn-open {
+    padding: 15px 40px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-open:hover {
+    background: white;
+    color: #333;
 }
